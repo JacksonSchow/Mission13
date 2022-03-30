@@ -54,6 +54,9 @@ namespace BowlingLeague.Controllers
             }
             else
             {
+                ViewBag.Teams = teamRepo.Teams.ToList();
+                ViewBag.ErrorMessage = "Check";
+
                 return View("Form", b);
             }
         }
@@ -79,6 +82,10 @@ namespace BowlingLeague.Controllers
             }
             else
             {
+                ViewBag.Teams = teamRepo.Teams.ToList();
+                ViewBag.ErrorMessage = "Check";
+                ViewBag.Check = 1;
+
                 return View("Form", b);
             }
         }
