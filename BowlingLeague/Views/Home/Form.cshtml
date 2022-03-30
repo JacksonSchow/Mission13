@@ -37,7 +37,7 @@
         <label>State:</label>
         @Html.ValidationMessageFor(b => b.BowlerState, "", new { @class = "text-danger" })
         <select asp-for="BowlerState" class="form-control">
-            <option>Select a State</option>
+            <option disabled>Select a State</option>
             <option value="AL">Alabama</option>
             <option value="AK">Alaska</option>
             <option value="AZ">Arizona</option>
@@ -103,17 +103,8 @@
     </div>
     <div class="form-group">
         <label>Team</label>
-        @if (ViewBag.ErrorMessage == null)
-        {
-            @Html.ValidationMessageFor(b => b.TeamID, "", new { @class = "text-danger" })
-        }
-        else
-        {
-            @Html.ValidationMessageFor(b => b.TeamID, "Select a Team from the Dropdown", new { @class = "text-danger" })
-        }
-
         <select asp-for="TeamID" class="form-control">
-            <option>Select a Team</option>
+            <option disabled>Select a Team</option>
             @foreach (var t in ViewBag.Teams)
             {
                 <option value="@t.TeamID">@t.TeamName</option>
